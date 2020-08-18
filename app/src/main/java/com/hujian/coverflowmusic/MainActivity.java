@@ -19,12 +19,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Request request =new Request.Builder().url("https://www.baidu.com").build();
+        final Request request =new Request.Builder().url("http://192.168.199.186:3000/artist/top/song").build();
+
         CHttpClient cHttpClient = new CHttpClient.Builder().build();
+
         cHttpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onResponse(Response response) {
-                Log.d(TAG, "onResponse: "+response.body()+"message||"+response.message()+"||code:"+response.code());
+                Log.d(TAG, "onResponse: "+response.body().string()+"message||"+response.message()+"||code:"+response.code());
             }
 
             @Override
