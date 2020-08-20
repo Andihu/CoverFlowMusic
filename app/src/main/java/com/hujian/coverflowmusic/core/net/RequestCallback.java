@@ -10,7 +10,7 @@ import java.io.IOException;
  * History:
  * <author> <time> <version> <desc>
  */
-public interface Callback {
+public interface RequestCallback {
 
     /**
      * 成功获取结果

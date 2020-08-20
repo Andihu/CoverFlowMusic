@@ -20,7 +20,7 @@ public interface IResponseHandler {
      * @param callback 　回调接口
      * @param response 　返回结果
      */
-    void handlerSuccess(Callback callback, Response response);
+    void handlerSuccess(RequestCallback callback, Response response);
 
     /**
      * 线程切换,http请求失败时候的回调
@@ -29,7 +29,7 @@ public interface IResponseHandler {
      * @param request  　请求
      * @param e        　可能产生的异常
      */
-    void handFail(Callback callback, Request request, IOException e);
+    void handFail(RequestCallback callback, Request request, IOException e);
 
 
     IResponseHandler RESPONSE_HANDLER = new IResponseHandler() {
@@ -37,7 +37,7 @@ public interface IResponseHandler {
         Handler HANDLER = new Handler(Looper.getMainLooper());
 
         @Override
-        public void handlerSuccess(final Callback callback, final Response response) {
+        public void handlerSuccess(final RequestCallback callback, final Response response) {
             Runnable runnable = new Runnable() {
                 @Override
                 public void run() {
@@ -48,7 +48,7 @@ public interface IResponseHandler {
         }
 
         @Override
-        public void handFail(final Callback callback, final Request request, final IOException e) {
+        public void handFail(final RequestCallback callback, final Request request, final IOException e) {
             Runnable runnable = new Runnable() {
                 @Override
                 public void run() {

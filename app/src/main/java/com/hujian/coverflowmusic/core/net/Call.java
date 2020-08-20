@@ -21,5 +21,5 @@ public interface Call {
      *
      * @param callback 回调接口
      */
-    void enqueue(Callback callback);
+    void enqueue(RequestCallback callback);
 }

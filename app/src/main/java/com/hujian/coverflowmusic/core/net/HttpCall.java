@@ -48,7 +48,7 @@ public class HttpCall implements Call {
     }
 
     @Override
-    public void enqueue(Callback callback) {
+    public void enqueue(RequestCallback callback) {
         Runnable runnable = new HttpTask(this, callback, requestHandler);
         HttpThreadPool.getInstance().execute(new FutureTask<>(runnable, null));
     }

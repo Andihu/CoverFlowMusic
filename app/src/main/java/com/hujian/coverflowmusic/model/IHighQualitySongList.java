@@ -15,11 +15,6 @@ import java.util.List;
  */
 public interface IHighQualitySongList {
 
-    void getHighQualitySongList(HighQualitySongList list);
+    void getHighQualitySongList(int limit, Long before);
 
-    interface Callback {
-        void onLoaded(List<Album> albums);
-
-        void onLoadFailed();
-    }
 }

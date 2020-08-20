@@ -15,13 +15,13 @@ public class HttpTask implements Runnable {
 
     HttpCall call;
 
-    Callback callback;
+    RequestCallback callback;
 
     private IRequestHandler requestHandler;
 
     private IResponseHandler handler = IResponseHandler.RESPONSE_HANDLER;
 
-    public HttpTask(HttpCall call, Callback callback, IRequestHandler requestHandler) {
+    public HttpTask(HttpCall call, RequestCallback callback, IRequestHandler requestHandler) {
         this.call = call;
         this.callback = callback;
         this.requestHandler = requestHandler;

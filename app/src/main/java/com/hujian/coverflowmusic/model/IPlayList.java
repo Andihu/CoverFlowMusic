@@ -1,10 +1,5 @@
 package com.hujian.coverflowmusic.model;
 
-import com.hujian.coverflowmusic.bean.album.Album;
-import com.hujian.coverflowmusic.bean.songlist.PlaylistResponse;
-
-import java.util.List;
-
 /**
  * Copyright (C), 2015-2020
  * FileName: IPlayList
@@ -15,12 +10,8 @@ import java.util.List;
  */
 public interface IPlayList {
 
-    void getPlayList(PlaylistResponse list);
+    void getNetPlayList(Long id);
 
-    interface Callback {
+    void getLocalPlayList();
 
-        void onLoaded(List<Album> albums);
-
-        void onLoadFailed();
-    }
 }

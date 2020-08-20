@@ -3,7 +3,7 @@ package com.hujian.coverflowmusic;
 import android.util.Log;
 
 import com.hujian.coverflowmusic.core.net.CHttpClient;
-import com.hujian.coverflowmusic.core.net.Callback;
+import com.hujian.coverflowmusic.core.net.RequestCallback;
 import com.hujian.coverflowmusic.core.net.Request;
 import com.hujian.coverflowmusic.core.net.Response;
 
@@ -30,7 +30,7 @@ public class ExampleUnitTest {
 
         CHttpClient cHttpClient = new CHttpClient.Builder().connTimeOut(1).build();
 
-        cHttpClient.newCall(request).enqueue(new Callback() {
+        cHttpClient.newCall(request).enqueue(new RequestCallback() {
             @Override
             public void onResponse(Response response) {
                 Log.d(TAG, "onResponse: "+response.body()+"message||"+response.message()+"||code:"+response.code());

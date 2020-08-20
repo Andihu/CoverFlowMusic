@@ -7,13 +7,8 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.hujian.coverflowmusic.bean.album.AlbumResponse;
-import com.hujian.coverflowmusic.bean.lrc.LrcResponse;
-import com.hujian.coverflowmusic.bean.song.SongResponse;
-import com.hujian.coverflowmusic.bean.songlist.PlaylistResponse;
-import com.hujian.coverflowmusic.bean.songlists.HighQualitySongList;
 import com.hujian.coverflowmusic.core.net.CHttpClient;
-import com.hujian.coverflowmusic.core.net.Callback;
+import com.hujian.coverflowmusic.core.net.RequestCallback;
 import com.hujian.coverflowmusic.core.net.Request;
 import com.hujian.coverflowmusic.core.net.Response;
 
@@ -52,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         CHttpClient cHttpClient = new CHttpClient.Builder().build();
 
-        cHttpClient.newCall(request).enqueue(new Callback() {
+        cHttpClient.newCall(request).enqueue(new RequestCallback() {
             @Override
             public void onResponse(Response response) {
                 Log.d(TAG, "onResponse: "+response.body().string()+"message||"+response.message()+"||code:"+response.code());
