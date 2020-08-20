@@ -1,7 +1,7 @@
 package com.hujian.coverflowmusic.model;
 
-import com.hujian.coverflowmusic.bean.Playlists;
-import com.hujian.coverflowmusic.bean.PopularSongList;
+import com.hujian.coverflowmusic.bean.songlist.Playlist;
+import com.hujian.coverflowmusic.bean.songlists.Playlists;
 
 public interface ISongService {
 
@@ -9,12 +9,12 @@ public interface ISongService {
      * 获取精品歌单
      * @return
      */
-   PopularSongList getPopularSongList();
+    Playlists getPopularSongList();
 
     /**
      * 获取歌单详情
      */
-    Playlists getSongListDetails();
+    Playlist getSongListDetails();
 
     /**
      * 获取歌曲详情
