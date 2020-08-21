@@ -16,7 +16,7 @@ import com.hujian.coverflowmusic.bean.model.ISong;
  * <author> <time> <version> <desc>
  */
 @Entity
-class Song implements ISong {
+public class Song implements ISong {
 
     @PrimaryKey(autoGenerate = true)
     public int id;
@@ -39,7 +39,7 @@ class Song implements ISong {
     @ColumnInfo(name = "artist_name")
     public String artistName;
 
-    @ColumnInfo(name = "artist_name")
+    @ColumnInfo(name = "artist_id")
     public String artistId;
 
     @ColumnInfo(name = "play_url")

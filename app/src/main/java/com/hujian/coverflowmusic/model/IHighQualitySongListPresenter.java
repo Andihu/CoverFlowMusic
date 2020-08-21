@@ -1,6 +1,9 @@
 package com.hujian.coverflowmusic.model;
 
-import com.hujian.coverflowmusic.bean.songlists.HighQualitySongList;
+import com.hujian.coverflowmusic.bean.songlists.HighQualitySongListResponse;
+import com.hujian.coverflowmusic.bean.songlists.Playlists;
+
+import java.util.List;
 
 
 /**
@@ -17,7 +20,7 @@ public interface IHighQualitySongListPresenter {
 
     interface HighQualitySongListView{
 
-        void loadSuccess(HighQualitySongList list);
+        void loadSuccess(List<Playlists> result);
 
         void loadFailed(String message);
     }

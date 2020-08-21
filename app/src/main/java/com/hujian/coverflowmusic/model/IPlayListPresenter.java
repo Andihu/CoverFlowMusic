@@ -22,9 +22,9 @@ public interface IPlayListPresenter {
 
     interface PlayListView{
 
-        void onLoadSuccess();
+        void onLoadSuccess(Playlist result);
 
-        void onLoadFailed(int code, String message);
+        void onLoadFailed(String message);
 
     }
 

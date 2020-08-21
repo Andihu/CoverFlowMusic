@@ -15,7 +15,7 @@ import com.hujian.coverflowmusic.bean.model.IPlayList;
  * <author> <time> <version> <desc>
  */
 @Entity
-class PlayList  implements IPlayList {
+public class PlayList  implements IPlayList {
 
     @PrimaryKey(autoGenerate = true)
     public int id;

@@ -8,7 +8,7 @@ import java.util.List;
  * @author bejson.com (i@bejson.com)
  * @website http://www.bejson.com/java2pojo/
  */
-public class HighQualitySongList {
+public class HighQualitySongListResponse {
 
     private List<Playlists> playlists;
     private int code;

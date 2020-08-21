@@ -7,17 +7,22 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.hujian.coverflowmusic.bean.album.AlbumResponse;
+import com.hujian.coverflowmusic.bean.lrc.LrcResponse;
 import com.hujian.coverflowmusic.bean.song.SongResponse;
+import com.hujian.coverflowmusic.bean.song.Songs;
 import com.hujian.coverflowmusic.bean.songlist.PlaylistResponse;
-import com.hujian.coverflowmusic.bean.songlists.HighQualitySongList;
+import com.hujian.coverflowmusic.bean.songlists.HighQualitySongListResponse;
 import com.hujian.coverflowmusic.core.net.CHttpClient;
 import com.hujian.coverflowmusic.core.net.RequestCallback;
 import com.hujian.coverflowmusic.core.net.Request;
 import com.hujian.coverflowmusic.core.net.Response;
+import com.hujian.coverflowmusic.model.ISongPresenter;
+import com.hujian.coverflowmusic.model.Impl.SongDetailsImpl;
 
-import java.io.IOException;
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
     private static final String TAG = "MainActivity";
 
     //热门歌单
@@ -46,25 +51,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Request request =new Request.Builder().url(highquality).build();
-
+        /*final Request request =new Request.Builder().url(highquality).build();
         CHttpClient cHttpClient = new CHttpClient.Builder().build();
-
         cHttpClient.newCall(request).enqueue(new RequestCallback() {
             @Override
             public void onResponse(Response response) {
                 Log.d(TAG, "onResponse: "+response.body().string()+"message||"+response.message()+"||code:"+response.code());
                 Gson go = new GsonBuilder().create();
-                HighQualitySongList highQualitySongList = go.fromJson(response.body().string(), HighQualitySongList.class);
-//                PlaylistResponse PlaylistResponse = go.fromJson(response.body().string(), PlaylistResponse.class);
-//                SongResponse SongResponse = go.fromJson(response.body().string(), SongResponse.class);
-//                AlbumResponse AlbumResponse = go.fromJson(response.body().string(), AlbumResponse.class);
-//                LrcResponse LrcResponse = go.fromJson(response.body().string(), LrcResponse.class);
+                HighQualitySongListResponse highQualitySongList = go.fromJson(response.body().string(), HighQualitySongListResponse.class);
+                PlaylistResponse PlaylistResponse = go.fromJson(response.body().string(), PlaylistResponse.class);
+                SongResponse SongResponse = go.fromJson(response.body().string(), SongResponse.class);
+                AlbumResponse AlbumResponse = go.fromJson(response.body().string(), AlbumResponse.class);
+                LrcResponse LrcResponse = go.fromJson(response.body().string(), LrcResponse.class);
             }
             @Override
             public void onFail(Request request, IOException e) {
                 Log.d(TAG, "onFail: request"+request.toString());
             }
-        });
+        });*/
     }
+
 }

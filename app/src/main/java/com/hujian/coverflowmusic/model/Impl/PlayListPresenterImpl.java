@@ -1,9 +1,13 @@
 package com.hujian.coverflowmusic.model.Impl;
 
 import android.content.Context;
+import android.text.TextUtils;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.hujian.coverflowmusic.AppConstant;
 import com.hujian.coverflowmusic.bean.songlist.Playlist;
+import com.hujian.coverflowmusic.bean.songlist.PlaylistResponse;
 import com.hujian.coverflowmusic.core.net.CHttpClient;
 import com.hujian.coverflowmusic.core.net.Request;
 import com.hujian.coverflowmusic.core.net.RequestCallback;
@@ -20,11 +24,11 @@ public class PlayListPresenterImpl implements IPlayListPresenter {
 
     private Context context;
 
-    private PlayListView playListView;
+    private PlayListView view;
 
 
     public PlayListPresenterImpl(PlayListView playListView, Context context) {
-        this.playListView = playListView;
+        this.view = playListView;
         this.context = context;
     }
 
@@ -36,12 +40,26 @@ public class PlayListPresenterImpl implements IPlayListPresenter {
         cHttpClient.newCall(request).enqueue(new RequestCallback() {
             @Override
             public void onResponse(Response response) {
-
+                if (response != null && !TextUtils.isEmpty(response.body().string())) {
+                    Gson gson = new GsonBuilder().create();
+                    final PlaylistResponse playlistResponse = gson.fromJson(response.body().string(), PlaylistResponse.class);
+                    if (view != null) {
+                        view.onLoadSuccess(playlistResponse.getPlaylist());
+                    }
+                } else {
+                    //返回一个空的数据
+                    if (view != null) {
+                        view.onLoadFailed("");
+                    }
+                    throw new IllegalArgumentException("no data");
+                }
             }
 
             @Override
             public void onFail(Request request, IOException e) {
-
+                if (view != null) {
+                    view.onLoadFailed("load netLPlayListDetail failed:" + e.getMessage());
+                }
             }
         });
     }

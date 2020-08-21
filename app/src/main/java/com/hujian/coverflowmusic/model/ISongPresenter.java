@@ -1,6 +1,11 @@
 package com.hujian.coverflowmusic.model;
 
 
+import com.hujian.coverflowmusic.bean.model.Dao.Song;
+import com.hujian.coverflowmusic.bean.song.Songs;
+
+import java.util.List;
+
 public interface ISongPresenter {
 
     void loadSongDetails(long id);
@@ -13,9 +18,9 @@ public interface ISongPresenter {
 
     interface SongView {
 
-        void onLoadSuccess();
+        void onLoadSuccess(List<Songs> result);
 
-        void onLoadFailed(int code, String message);
+        void onLoadFailed( String message);
 
     }
 
