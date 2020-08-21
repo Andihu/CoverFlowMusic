@@ -27,9 +27,12 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "androidx.appcompat:appcompat:${rootProject.ext.depsVersion.appcompat}"
     implementation "androidx.constraintlayout:constraintlayout:${rootProject.ext.depsVersion.constraintlayout}"
+
     testImplementation "junit:junit:${rootProject.ext.depsVersion.jUnit}"
     androidTestImplementation "androidx.test.ext:junit:${rootProject.ext.depsVersion.Androidjunit}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${rootProject.ext.depsVersion.espresso}"
 
+    implementation "android.arch.persistence.room:runtime:${rootProject.ext.depsVersion.room}"
+    annotationProcessor "android.arch.persistence.room:compiler:${rootProject.ext.depsVersion.roomAnnotation}"
     implementation "com.google.code.gson:gson:${rootProject.ext.depsVersion.gson}"
 }

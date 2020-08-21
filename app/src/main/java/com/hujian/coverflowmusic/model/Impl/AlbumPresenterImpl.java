@@ -1,6 +1,6 @@
-package com.hujian.coverflowmusic.presenter;
+package com.hujian.coverflowmusic.model.Impl;
 
-import android.system.ErrnoException;
+import android.content.Context;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
@@ -11,17 +11,27 @@ import com.hujian.coverflowmusic.core.net.CHttpClient;
 import com.hujian.coverflowmusic.core.net.Request;
 import com.hujian.coverflowmusic.core.net.RequestCallback;
 import com.hujian.coverflowmusic.core.net.Response;
-import com.hujian.coverflowmusic.model.IAlbum;
+import com.hujian.coverflowmusic.model.IAlbumPresenter;
 
 import java.io.IOException;
 
-public class AlbumPresenterImpl implements IAlbum {
+/**
+ * 专辑详情
+ * http://10.0.70.30:3000/album?id=32311;
+ */
+public class AlbumPresenterImpl implements IAlbumPresenter {
 
-    //专辑详情
-    String album= "http://10.0.70.30:3000/album?id=32311";
+   private Context context;
+
+   private AlbumView view;
+
+    public AlbumPresenterImpl(Context context, AlbumView view) {
+        this.context = context;
+        this.view = view;
+    }
 
     @Override
-    public void getAlbum(final int id) {
+    public void getNetAlbumDetail(int id) {
         String url = AppConstant.HOST+"album?id="+id;
         final Request request =new Request.Builder().url(url).build();
         CHttpClient cHttpClient = new CHttpClient.Builder().build();

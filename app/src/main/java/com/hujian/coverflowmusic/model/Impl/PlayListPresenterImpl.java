@@ -1,19 +1,33 @@
-package com.hujian.coverflowmusic.presenter;
+package com.hujian.coverflowmusic.model.Impl;
+
+import android.content.Context;
 
 import com.hujian.coverflowmusic.AppConstant;
-import com.hujian.coverflowmusic.bean.songlist.PlaylistResponse;
+import com.hujian.coverflowmusic.bean.songlist.Playlist;
 import com.hujian.coverflowmusic.core.net.CHttpClient;
 import com.hujian.coverflowmusic.core.net.Request;
 import com.hujian.coverflowmusic.core.net.RequestCallback;
 import com.hujian.coverflowmusic.core.net.Response;
-import com.hujian.coverflowmusic.model.IPlayList;
+import com.hujian.coverflowmusic.model.IPlayListPresenter;
 
 import java.io.IOException;
 
-public class PlayListPresenterImpl implements IPlayList {
+/**
+ * 歌单详情
+ * http://10.0.70.30:3000/playlist/detail?id=24381616
+ */
+public class PlayListPresenterImpl implements IPlayListPresenter {
 
-    //歌单详情
-    String playList = "http://10.0.70.30:3000/playlist/detail?id=24381616";
+    private Context context;
+
+    private PlayListView playListView;
+
+
+    public PlayListPresenterImpl(PlayListView playListView, Context context) {
+        this.playListView = playListView;
+        this.context = context;
+    }
+
     @Override
     public void getNetPlayList(Long id) {
         String url = AppConstant.HOST+"playlist/detail?id="+id;
@@ -34,6 +48,16 @@ public class PlayListPresenterImpl implements IPlayList {
 
     @Override
     public void getLocalPlayList() {
+
+    }
+
+    @Override
+    public void savePlayList(Playlist playlist) {
+
+    }
+
+    @Override
+    public void removeFavoritePlayList(long id) {
 
     }
 }
