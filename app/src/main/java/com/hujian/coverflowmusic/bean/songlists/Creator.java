@@ -31,7 +31,6 @@ public class Creator {
     private int authority;
     private boolean mutual;
     private List<String> expertTags;
-    private String experts;
     private int djStatus;
     private int vipType;
     private String remarkName;
@@ -205,14 +204,6 @@ public class Creator {
 
     public List<String> getExpertTags() {
         return expertTags;
-    }
-
-    public void setExperts(String experts) {
-        this.experts = experts;
-    }
-
-    public String getExperts() {
-        return experts;
     }
 
     public void setDjStatus(int djStatus) {

@@ -1,7 +1,5 @@
 package com.hujian.coverflowmusic.model;
 
-
-import com.hujian.coverflowmusic.bean.model.Dao.Song;
 import com.hujian.coverflowmusic.bean.song.Songs;
 
 import java.util.List;

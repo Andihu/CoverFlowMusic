@@ -27,6 +27,8 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "androidx.appcompat:appcompat:${rootProject.ext.depsVersion.appcompat}"
     implementation "androidx.constraintlayout:constraintlayout:${rootProject.ext.depsVersion.constraintlayout}"
+    implementation "androidx.recyclerview:recyclerview:${rootProject.ext.depsVersion.recyclerview}-alpha05"
+    implementation 'org.jetbrains:annotations-java5:15.0'
 
     testImplementation "junit:junit:${rootProject.ext.depsVersion.jUnit}"
     androidTestImplementation "androidx.test.ext:junit:${rootProject.ext.depsVersion.Androidjunit}"

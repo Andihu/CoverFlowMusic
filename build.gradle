@@ -44,6 +44,7 @@ ext{
 
             gson                : '2.8.6',
             room                : '1.1.1',
-            roomAnnotation      : '1.1.1'
+            roomAnnotation      : '1.1.1',
+            recyclerview        : '1.2.0'
     ]
 }

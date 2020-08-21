@@ -17,8 +17,8 @@ public class Playlists {
     private long trackNumberUpdateTime;
     private int status;
     private long userId;
-    private long createTime;
-    private long updateTime;
+    private long createtime;
+    private long updatetime;
     private int subscribedCount;
     private int trackCount;
     private int cloudTrackCount;
@@ -88,20 +88,20 @@ public class Playlists {
         return userId;
     }
 
-    public void setCreateTime(long createTime) {
-        this.createTime = createTime;
+    public void setCreatetime(long createtime) {
+        this.createtime = createtime;
     }
 
-    public long getCreateTime() {
-        return createTime;
+    public long getCreatetime() {
+        return createtime;
     }
 
-    public void setUpdateTime(long updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdatetime(long updatetime) {
+        this.updatetime = updatetime;
     }
 
-    public long getUpdateTime() {
-        return updateTime;
+    public long getUpdatetime() {
+        return updatetime;
     }
 
     public void setSubscribedCount(int subscribedCount) {

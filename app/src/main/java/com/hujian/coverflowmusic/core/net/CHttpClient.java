@@ -42,8 +42,8 @@ public class CHttpClient {
 
         public Builder() {
             this.connTimeout = 10 * 1000;
-            this.readTimeout = 10 * 1000;
-            this.writeTimeout = 10 * 1000;
+            this.readTimeout = 30 * 1000;
+            this.writeTimeout = 30 * 1000;
         }
 
         public Builder readTimeOut(int readTimeout) {
