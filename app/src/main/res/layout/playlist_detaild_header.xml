@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/song_detail_bg"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/song_detail_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="欧美｜我们听过的那首歌，原来采样了它"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/song_detail_bg" />
+
+    <com.hujian.coverflowmusic.widget.CircleImageView
+        android:id="@+id/song_detail_creator_img"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/image2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/song_detail_name" />
+
+    <TextView
+        android:id="@+id/song_detail_creator_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="傻傻傻傻傻了"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/song_detail_creator_img"
+        app:layout_constraintStart_toEndOf="@+id/song_detail_creator_img"
+        app:layout_constraintTop_toTopOf="@+id/song_detail_creator_img" />
+
+    <TextView
+        android:id="@+id/song_detail_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:padding="10dp"
+        android:text="首先，采样并不是翻唱。它是把一首已有的伴奏旋律或声音截取出来，通过重新编曲形成新的音乐。采样常见于流行音乐和说唱音乐里，创作者通过采样的形式来增加歌曲的可听性。创作者所选取的采样作品，要么耳熟能详，要么冷门先锋，与新的音乐结合在一起，激荡出不一样的火花。
+ 
+本张歌单精选66首欧美佳作，偶数序列的歌曲为被采样的作品，奇数序列的歌曲则是经过采样后的新作。由于歌曲众多，仅对其中几组歌曲进行重点推荐：
+ 
+1. Madonna—《Hung up》
+这首歌曲是麦当娜的经典舞曲代表作之一，其间奏便是取样于瑞典组合ABBA的《Gimme！Gimme！Gimme！》，两者的结合使得这首歌的魅力值增添不少。
+ 
+2. Nicki Minaj—《Anaconda》
+该曲是麻辣鸡女士14年专辑的主打歌，B榜最高排行第二名，里面那句“My anaconda don't want none, unless you got buns, hun”和部分旋律都取样于美国说唱歌手Sir Mix-A-Lot的《Baby Got Back》。
+ 
+3. Eminem/Dido—《Stan》
+作为说唱天王姆爷的代表作之一，很多人第一次听这首歌就按下红心，而为这首歌锦上添花的女声部分，正是出自于英国著名女歌手Dido当年的大热歌曲《Thank you》。姆爷的说唱结合Dido干净空灵的演唱，让“Stan”这首歌红遍全球。
+ 
+4. Beyonce/Jay-Z—《Crazy In Love》
+碧昂斯当年从真命天女单飞后，和丈夫Jay-Z合作的首支单曲便荣登公告牌冠军宝座，这首歌曲的大获成功，也为碧昂斯往后封神奠定了傲人的基础。该曲采样了乐队The Chi-Lites的歌曲《Are You My Woman》。"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/song_detail_creator_img" />
+
+    <TextView
+        android:id="@+id/song_detail_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="90后"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/song_detail_desc" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="播放"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/song_detail_tag" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

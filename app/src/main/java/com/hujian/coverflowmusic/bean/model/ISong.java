@@ -28,8 +28,12 @@ public interface ISong {
 
     String getPlayUrl();
 
+    String getArtistPic();
+
     String getSize();
 
     String getLrc();
+
+    long getDuration();
 
 }

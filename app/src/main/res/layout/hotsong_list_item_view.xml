@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+android:padding="10dp"
+    android:layout_height="wrap_content">
+
+    <com.hujian.coverflowmusic.view.NiceImageView
+        android:id="@+id/hot_song_img"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        tools:src="@drawable/image2"
+        app:corner_radius="5dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/hot_song_img"
+        app:layout_constraintStart_toEndOf="@+id/hot_song_img"
+        app:layout_constraintTop_toTopOf="@+id/hot_song_img">
+
+        <TextView
+            android:id="@+id/hot_song_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:maxEms="10"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textStyle="bold"
+            tools:text="Sane" />
+
+        <TextView
+            android:id="@+id/hot_song_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:maxEms="10"
+            android:singleLine="true"
+            android:ellipsize="end"
+            tools:text="描述信息" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=">"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -98,68 +98,83 @@ public class PlayList  implements IPlayList {
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 
     @Override
     public String getCoverImageUrl() {
-        return null;
+        return coverImageUrl;
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return description;
     }
 
     @Override
     public String getTag() {
-        return null;
+        return tag;
     }
 
     @Override
     public String getPlayListId() {
-        return null;
+        return playListId;
     }
 
     @Override
     public String getTackCount() {
-        return null;
+        return tackCount;
     }
 
     @Override
     public String getCreatorName() {
-        return null;
+        return creatorName;
     }
 
     @Override
     public String getCreatorAvatar() {
-        return null;
+        return creatorAvatar;
     }
 
     @Override
     public String getCreatorAvatarBackground() {
-        return null;
+        return creatorAvatarBackground;
     }
 
     @Override
     public String getCreatorSignature() {
-        return null;
+        return creatorSignature;
     }
 
     public static PlayList toPlayList(Playlists playlists){
         PlayList playlist =new PlayList();
         playlist.setDescription(playlists.getDescription());
         playlist.setCoverImageUrl(playlists.getCoverImgUrl());
-        playlist.setCreatorAvatar(playlists.getCreator().getAvatarImgId_str());
-        playlist.setCreatorAvatarBackground(playlists.getCreator().getBackgroundImgIdStr());
+        playlist.setCreatorAvatar(playlists.getCreator().getAvatarUrl());
+        playlist.setCreatorAvatarBackground(playlists.getCreator().getBackgroundUrl());
         playlist.setCreatorName(playlists.getCreator().getNickname());
         playlist.setCreatorSignature(playlists.getCreator().getSignature());
         playlist.setName(playlists.getName());
-        playlist.setId(playlists.getId());
+        playlist.setPlayListId(String.valueOf(playlists.getId()));
         playlist.setTag(playlists.getTag());
         playlist.setTackCount(playlists.getTrackCount()+"");
         return playlist;
     }
 
-
+    @Override
+    public String toString() {
+        return "PlayList{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", coverImageUrl='" + coverImageUrl + '\'' +
+                ", description='" + description + '\'' +
+                ", tag='" + tag + '\'' +
+                ", playListId='" + playListId + '\'' +
+                ", tackCount='" + tackCount + '\'' +
+                ", creatorName='" + creatorName + '\'' +
+                ", creatorAvatar='" + creatorAvatar + '\'' +
+                ", creatorAvatarBackground='" + creatorAvatarBackground + '\'' +
+                ", creatorSignature='" + creatorSignature + '\'' +
+                '}';
+    }
 }

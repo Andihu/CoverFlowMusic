@@ -28,7 +28,6 @@ dependencies {
     implementation "androidx.appcompat:appcompat:${rootProject.ext.depsVersion.appcompat}"
     implementation "androidx.constraintlayout:constraintlayout:${rootProject.ext.depsVersion.constraintlayout}"
     implementation "androidx.recyclerview:recyclerview:${rootProject.ext.depsVersion.recyclerview}-alpha05"
-    implementation 'org.jetbrains:annotations-java5:15.0'
 
     testImplementation "junit:junit:${rootProject.ext.depsVersion.jUnit}"
     androidTestImplementation "androidx.test.ext:junit:${rootProject.ext.depsVersion.Androidjunit}"
@@ -37,4 +36,7 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:${rootProject.ext.depsVersion.room}"
     annotationProcessor "android.arch.persistence.room:compiler:${rootProject.ext.depsVersion.roomAnnotation}"
     implementation "com.google.code.gson:gson:${rootProject.ext.depsVersion.gson}"
+    implementation "com.github.bumptech.glide:glide:${rootProject.ext.depsVersion.glide}"
+    implementation "androidx.palette:palette:${rootProject.ext.depsVersion.palette}"
+    implementation "com.yanzhenjie:sofia:${rootProject.ext.depsVersion.sofia}"
 }

@@ -45,6 +45,9 @@ ext{
             gson                : '2.8.6',
             room                : '1.1.1',
             roomAnnotation      : '1.1.1',
-            recyclerview        : '1.2.0'
+            recyclerview        : '1.2.0',
+            glide               : '4.11.0',
+            palette             : '1.0.0',
+            sofia               : '1.0.5'
     ]
 }
