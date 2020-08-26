@@ -8,10 +8,14 @@ public interface MusicService {
 
     void seekTo(int position);
 
+    void play();
+
+    void pause();
+
     String next();
 
     String previous();
 
-    int getBufferPercent();
+
 
 }

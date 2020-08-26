@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="UnusedAttribute">
-        <activity android:name=".ui.PlayListDetails"></activity>
+        <activity android:name=".ui.MusicPlayActivity"></activity>
+        <activity android:name=".ui.PlayListDetails" />
 
         <uses-library
             android:name="org.apache.http.legacy"
