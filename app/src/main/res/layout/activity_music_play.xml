@@ -4,6 +4,264 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MusicPlayActivity">
+    android:background="@color/colorWhite"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/titlebar_playing_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/titlebar_down"
+            android:layout_width="52dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="4dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/btn_playing_back_selector" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/play_song_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/textDes"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/play_artist_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLength="18"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/aboutSign"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/titlebar_play_list"
+            android:layout_width="52dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/titlebar_down"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="4dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/btn_playing_list" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+        <TextView
+            android:id="@+id/start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/aboutSign" />
+
+        <SeekBar
+            android:id="@+id/sb_volume"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxHeight="6dp"
+            android:minHeight="6dp"
+            android:progressDrawable="@drawable/seek_bar"
+            android:thumb="@drawable/playing_control_time" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textColor="@color/aboutSign" />
+
+        <TextView
+            android:id="@+id/end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/aboutSign" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/about"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/sb_progress"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <RelativeLayout
+            android:id="@+id/rotate_rl"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:contentDescription="@null"
+                android:src="@mipmap/playing_lp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:contentDescription="@null"
+                android:src="@mipmap/playing_veins_lp" />
+
+            <ImageView
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:layout_centerInParent="true"
+                android:contentDescription="@null"
+                android:src="@mipmap/playing_cover_lp" />
+
+            <com.hujian.coverflowmusic.widget.CircleImageView
+                android:id="@+id/playing_song_album"
+                android:layout_width="132dp"
+                android:layout_height="132dp"
+                android:layout_centerInParent="true"
+                android:contentDescription="@null"
+                android:maxHeight="130dp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_lyrics_mask"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_gravity="center"
+            android:background="@color/colorWhite"
+            android:contentDescription="@null"
+            android:src="@drawable/mask"
+            android:visibility="gone" />
+
+
+        <ImageView
+            android:id="@+id/iv_secreen_sun_switch"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@null"
+            android:src="@drawable/sun_always_of_selector"
+            android:visibility="gone"
+            tools:ignore="RtlHardcoded" />
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/music_player_mode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:contentDescription="@null"
+            android:src="@drawable/btn_playing_cycle_off" />
+
+        <ImageView
+            android:id="@+id/music_player_pre"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:contentDescription="@null"
+            android:src="@drawable/btn_playing_prev_selector" />
+
+        <ImageView
+            android:id="@+id/music_play"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@null"
+            android:src="@drawable/btn_playing_play_selector" />
+
+        <ImageView
+            android:id="@+id/music_player_next"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:contentDescription="@null"
+            android:src="@drawable/btn_playing_next_selector" />
+
+        <ImageView
+            android:id="@+id/iv_favorite_music"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:contentDescription="@null"
+            android:src="@drawable/music_qqbar_favorite_selector" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/about"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3" />
+
+    <SeekBar
+        android:id="@+id/sb_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="8dp"
+        android:minHeight="8dp"
+        android:progressDrawable="@drawable/seek_bar"
+        android:thumb="@drawable/playing_control_time"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
